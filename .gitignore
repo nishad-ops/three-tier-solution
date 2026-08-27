@@ -1,0 +1,11 @@
+terraform/.terraform.lock.hcl
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform/
+three-tier-app/*.tgz
+three-tier-app/charts/api/*.tgz
+three-tier-app/charts/frontend/*.tgz
+three-tier-app/charts/backend/*.tgz
+commands
+deployment.yaml.bk.txt
+migration-job.yaml.bkp.txt

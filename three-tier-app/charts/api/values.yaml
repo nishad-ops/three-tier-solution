@@ -1,0 +1,19 @@
+enabled: true
+replicaCount: 1
+
+image:
+  repository: python
+  tag: 3.11-alpine
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 5000
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi

@@ -1,0 +1,54 @@
+global:
+  azureWorkloadClientId: "00000000-0000-0000-0000-000000000000"
+  azureTenantId: "00000000-0000-0000-0000-000000000000"
+  keyVaultName: "app3tier-kv-cheap"
+
+frontend:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: nginx
+    tag: alpine
+  service:
+    port: 80
+  resources:
+    limits:
+      cpu: 100m
+      memory: 128Mi
+    requests:
+      cpu: 50m
+      memory: 64Mi
+
+api:
+  enabled: true
+  replicaCount: 1
+  image:
+    repository: python
+    tag: 3.11-alpine
+  service:
+    port: 5000
+  resources:
+    limits:
+      cpu: 250m
+      memory: 256Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+
+database:
+  enabled: true
+  image:
+    repository: mysql
+    tag: "8.0"
+  service:
+    port: 3306
+  persistence:
+    size: 5Gi
+    storageClass: default
+  resources:
+    limits:
+      cpu: 500m
+      memory: 512Mi
+    requests:
+      cpu: 200m
+      memory: 256Mi
