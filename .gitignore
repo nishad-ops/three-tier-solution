@@ -8,4 +8,5 @@ migration-job.yaml.bkp.txt
 *.tgz
 deployment.yaml.bkp.txt
 migration-job.yaml.bkp.txt
+three-tier-app/test-render.yaml
 .gitignore
