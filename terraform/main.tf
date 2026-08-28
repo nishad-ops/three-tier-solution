@@ -11,7 +11,9 @@ terraform {
 provider "azurerm" {
   features {
     key_vault {
+      # no retention issues
       purge_soft_delete_on_destroy    = true
+      # If you want to recover soft-deleted Key Vaults, set this to true.
       recover_soft_deleted_key_vaults = false
     }
   }
@@ -21,7 +23,8 @@ locals {
   location = "eastus"
   prefix   = "app3tier"
 }
-# In Terraform, while the definition block is plural (locals), references to local values must use the singular prefix local.<name>.  
+
+# In Terraform, while the definition block is plural (locals), references to local values must use the singular prefix local.<name>. Learned this a hard way 
 resource "azurerm_resource_group" "rg" {
   name     = "${local.prefix}-rg"
   location = local.location

@@ -2,6 +2,8 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   name: {{ include "three-tier.fullname" . }}-db-migration-{{ .Release.Revision }}
+  # Release.revision to maintain unique job name for each revision of the helm chart 
+  
   labels:
     {{- include "three-tier.labels" . | nindent 4 }}
   annotations:
@@ -31,6 +33,8 @@ spec:
 
               echo "Connecting to MySQL at $DB_HOST:$DB_PORT as user $DB_USER..."
               echo "Applying database schema migrations to database $DB_NAME..."
+              # this is just a simulation that I have added... In most scenarios we would usually connect to an external db and run the migration scripts. 
+              # But since we are using a local db, I am just simulating the migration process here.
               sleep 3
               echo "Migration complete."
           env:
