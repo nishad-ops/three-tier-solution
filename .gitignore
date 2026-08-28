@@ -3,6 +3,7 @@ terraform/*.tfstate
 terraform/*.tfstate.backup
 terraform/.terraform/
 three-tier-app/*.tgz
+three-tier-app/charts/*.tgz
 three-tier-app/charts/api/*.tgz
 three-tier-app/charts/frontend/*.tgz
 three-tier-app/charts/backend/*.tgz
