@@ -6,7 +6,7 @@ three-tier-app/*.tgz
 three-tier-app/charts/api/*.tgz
 three-tier-app/charts/frontend/*.tgz
 three-tier-app/charts/backend/*.tgz
-commands
+commands.txt
 deployment.yaml.bk.txt
 migration-job.yaml.bkp.txt
 .gitignore
