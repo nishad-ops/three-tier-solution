@@ -10,4 +10,5 @@ three-tier-app/charts/backend/*.tgz
 commands.txt
 deployment.yaml.bk.txt
 migration-job.yaml.bkp.txt
+*.tgz
 .gitignore
